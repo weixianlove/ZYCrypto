@@ -18,9 +18,13 @@ extension String {
         return result
     }
     
-    func hash(by algorithm: Algorithm) -> String {
-        return algorithm.hash(string: self)
+    func hashHex(by algorithm: Algorithm) -> String {
+        return algorithm.hash(string: self).hexString
     }
+    
+     func hash(by algorithm: Algorithm) -> [UInt8] {
+           return algorithm.hash(string: self)
+     }
 }
 
 
@@ -65,7 +69,7 @@ enum Algorithm {
         return Int(result)
     }
     
-    func hash(string: String) -> String {
+    func hash(string: String) -> [UInt8] {
         var hash = [UInt8](repeating: 0, count: self.digestLength())
         switch self {
         case .MD5:
@@ -81,7 +85,7 @@ enum Algorithm {
         case .SHA512:
             CC_SHA512(string.bytes, CC_LONG(string.bytes.count), &hash)
         }
-        return hash.hexString
+        return hash
     }
 }
 

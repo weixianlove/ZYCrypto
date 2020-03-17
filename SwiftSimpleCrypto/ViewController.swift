@@ -42,7 +42,7 @@ class ViewController: UIViewController {
         let canonicalHeaders = "content-type:application/json; charset=utf-8\n" + "host:" + host + "\n"
         let signedHeaders = "content-type;host"
         let payload = "{\"Limit\": 1, \"Filters\": [{\"Values\": [\"\\u672a\\u547d\\u540d\"], \"Name\": \"instance-name\"}]}"
-        let hashedRequestPayload = payload.hash(by: .SHA256)
+        let hashedRequestPayload = payload.hashHex(by: .SHA256)
         let canonicalRequest = httpRequestMethod + "\n" + canonicalUri + "\n" + canonicalQueryString + "\n"
             + canonicalHeaders + "\n" + signedHeaders + "\n" + hashedRequestPayload;
         print("第一步结果：", canonicalRequest)
@@ -50,7 +50,7 @@ class ViewController: UIViewController {
         
         // ************* 步骤 2：拼接待签名字符串 *************
         let credentialScope = date + "/" + service + "/" + "tc3_request"
-        let hashedCanonicalRequest = canonicalRequest.hash(by: .SHA256)
+        let hashedCanonicalRequest = canonicalRequest.hashHex(by: .SHA256)
         let stringToSign = algorithm + "\n" + timestamp + "\n" + credentialScope + "\n" + hashedCanonicalRequest
         
         print("第二步结果：", stringToSign)
