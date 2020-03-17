@@ -8,22 +8,23 @@
 
 /* Begin PBXBuildFile section */
 		D55E58C92420706900A0A773 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55E58C82420706900A0A773 /* AppDelegate.swift */; };
-		D55E58CB2420706900A0A773 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55E58CA2420706900A0A773 /* SceneDelegate.swift */; };
 		D55E58CD2420706900A0A773 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55E58CC2420706900A0A773 /* ViewController.swift */; };
 		D55E58D02420706900A0A773 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55E58CE2420706900A0A773 /* Main.storyboard */; };
 		D55E58D22420706D00A0A773 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D55E58D12420706D00A0A773 /* Assets.xcassets */; };
 		D55E58D52420706D00A0A773 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D55E58D32420706D00A0A773 /* LaunchScreen.storyboard */; };
+		D55E58DD2420708800A0A773 /* ZYCrypto.swift in Sources */ = {isa = PBXBuildFile; fileRef = D55E58DC2420708800A0A773 /* ZYCrypto.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		D55E58C52420706900A0A773 /* SwiftSimpleCrypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftSimpleCrypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D55E58C82420706900A0A773 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D55E58CA2420706900A0A773 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		D55E58CC2420706900A0A773 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		D55E58CF2420706900A0A773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D55E58D12420706D00A0A773 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D55E58D42420706D00A0A773 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D55E58D62420706D00A0A773 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D55E58DC2420708800A0A773 /* ZYCrypto.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZYCrypto.swift; sourceTree = "<group>"; };
+		D55E58DE242070D300A0A773 /* SwiftSimpleCrypto-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SwiftSimpleCrypto-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +57,14 @@
 		D55E58C72420706900A0A773 /* SwiftSimpleCrypto */ = {
 			isa = PBXGroup;
 			children = (
+				D55E58DC2420708800A0A773 /* ZYCrypto.swift */,
 				D55E58C82420706900A0A773 /* AppDelegate.swift */,
-				D55E58CA2420706900A0A773 /* SceneDelegate.swift */,
 				D55E58CC2420706900A0A773 /* ViewController.swift */,
 				D55E58CE2420706900A0A773 /* Main.storyboard */,
 				D55E58D12420706D00A0A773 /* Assets.xcassets */,
 				D55E58D32420706D00A0A773 /* LaunchScreen.storyboard */,
 				D55E58D62420706D00A0A773 /* Info.plist */,
+				D55E58DE242070D300A0A773 /* SwiftSimpleCrypto-Bridging-Header.h */,
 			);
 			path = SwiftSimpleCrypto;
 			sourceTree = "<group>";
@@ -99,6 +101,7 @@
 				TargetAttributes = {
 					D55E58C42420706900A0A773 = {
 						CreatedOnToolsVersion = 11.3.1;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -139,8 +142,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				D55E58CD2420706900A0A773 /* ViewController.swift in Sources */,
+				D55E58DD2420708800A0A773 /* ZYCrypto.swift in Sources */,
 				D55E58C92420706900A0A773 /* AppDelegate.swift in Sources */,
-				D55E58CB2420706900A0A773 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,7 +219,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -270,7 +273,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -284,7 +287,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3PPL3J2AK;
 				INFOPLIST_FILE = SwiftSimpleCrypto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -292,6 +297,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weixian.SwiftSimpleCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftSimpleCrypto/SwiftSimpleCrypto-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -301,7 +308,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P3PPL3J2AK;
 				INFOPLIST_FILE = SwiftSimpleCrypto/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -309,6 +318,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.weixian.SwiftSimpleCrypto;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SwiftSimpleCrypto/SwiftSimpleCrypto-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
