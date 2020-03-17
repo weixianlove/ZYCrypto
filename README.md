@@ -14,5 +14,6 @@ let signature = oData.hexSting.lowercased()
 #### HASH
 
 ```swift
-let sha256Hash = "test string".hash(by: .SHA256)
+let sha256Hash = "test string".hashHex(by: .SHA256)
+let md5Hash = "test string".hash(by: .MD5).base64String
 ```
