@@ -23,7 +23,7 @@ extension String {
     }
     
      func hash(by algorithm: Algorithm) -> [UInt8] {
-           return algorithm.hash(string: self)
+        return algorithm.hash(string: self)
      }
 }
 
@@ -34,18 +34,12 @@ enum Algorithm {
     func algorithm() -> CCHmacAlgorithm {
         var result: Int = 0
         switch self {
-        case .MD5:
-            result = kCCHmacAlgMD5
-        case .SHA1:
-            result = kCCHmacAlgSHA1
-        case .SHA224:
-            result = kCCHmacAlgSHA224
-        case .SHA256:
-            result = kCCHmacAlgSHA256
-        case .SHA384:
-            result = kCCHmacAlgSHA384
-        case .SHA512:
-            result = kCCHmacAlgSHA512
+        case .MD5:    result = kCCHmacAlgMD5
+        case .SHA1:   result = kCCHmacAlgSHA1
+        case .SHA224: result = kCCHmacAlgSHA224
+        case .SHA256: result = kCCHmacAlgSHA256
+        case .SHA384: result = kCCHmacAlgSHA384
+        case .SHA512: result = kCCHmacAlgSHA512
         }
         return CCHmacAlgorithm(result)
     }
@@ -53,18 +47,12 @@ enum Algorithm {
     func digestLength() -> Int {
         var result: CInt = 0
         switch self {
-        case .MD5:
-            result = CC_MD5_DIGEST_LENGTH
-        case .SHA1:
-            result = CC_SHA1_DIGEST_LENGTH
-        case .SHA224:
-            result = CC_SHA224_DIGEST_LENGTH
-        case .SHA256:
-            result = CC_SHA256_DIGEST_LENGTH
-        case .SHA384:
-            result = CC_SHA384_DIGEST_LENGTH
-        case .SHA512:
-            result = CC_SHA512_DIGEST_LENGTH
+        case .MD5:    result = CC_MD5_DIGEST_LENGTH
+        case .SHA1:   result = CC_SHA1_DIGEST_LENGTH
+        case .SHA224: result = CC_SHA224_DIGEST_LENGTH
+        case .SHA256: result = CC_SHA256_DIGEST_LENGTH
+        case .SHA384: result = CC_SHA384_DIGEST_LENGTH
+        case .SHA512: result = CC_SHA512_DIGEST_LENGTH
         }
         return Int(result)
     }
@@ -72,18 +60,12 @@ enum Algorithm {
     func hash(string: String) -> [UInt8] {
         var hash = [UInt8](repeating: 0, count: self.digestLength())
         switch self {
-        case .MD5:
-            CC_MD5(string.bytes, CC_LONG(string.bytes.count), &hash)
-        case .SHA1:
-            CC_SHA1(string.bytes, CC_LONG(string.bytes.count), &hash)
-        case .SHA224:
-            CC_SHA224(string.bytes, CC_LONG(string.bytes.count), &hash)
-        case .SHA256:
-            CC_SHA256(string.bytes, CC_LONG(string.bytes.count), &hash)
-        case .SHA384:
-            CC_SHA384(string.bytes, CC_LONG(string.bytes.count), &hash)
-        case .SHA512:
-            CC_SHA512(string.bytes, CC_LONG(string.bytes.count), &hash)
+        case .MD5:    CC_MD5(   string.bytes, CC_LONG(string.bytes.count), &hash)
+        case .SHA1:   CC_SHA1(  string.bytes, CC_LONG(string.bytes.count), &hash)
+        case .SHA224: CC_SHA224(string.bytes, CC_LONG(string.bytes.count), &hash)
+        case .SHA256: CC_SHA256(string.bytes, CC_LONG(string.bytes.count), &hash)
+        case .SHA384: CC_SHA384(string.bytes, CC_LONG(string.bytes.count), &hash)
+        case .SHA512: CC_SHA512(string.bytes, CC_LONG(string.bytes.count), &hash)
         }
         return hash
     }
